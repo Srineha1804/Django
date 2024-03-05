@@ -1,0 +1,26 @@
+{% load static %}
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>Travel Tourism Management</title>
+    <link type="text/css" rel="stylesheet" href="{% static 'css/style.css'%}">
+</head>
+<body style="background-image: url('{% static 'images/Home.jpg' %}');background-repeat:no-repeat;background-size:100%;";>
+<a href="{% url 'register' %}"> Sign-up </a> &nbsp&nbsp&nbsp
+<a href ="{% url 'login' %}">Login </a> &nbsp&nbsp&nbsp
+<a href ="{% url 'changepassword' %}">Change Password </a> &nbsp&nbsp&nbsp
+<a href="{% url '' %}">Home</a> &nbsp&nbsp&nbsp
+<a href="{% url 'contact' %}">Contact Us</a> &nbsp&nbsp&nbsp
+<a href="{% url 'about' %}">About</a> &nbsp&nbsp&nbsp
+<br><br>
+{% block 'b1' %}
+<h2> <center><font color="lenverder">KLU Travel Tourism Management</font></center></h2>
+
+<div>
+    {% for i in messages %}
+    <h4 align="center"><font color="dark-red">{{i}}</font></h4>
+    {% endfor %}
+</div>
+{% endblock %}
+</body>
+</html>
